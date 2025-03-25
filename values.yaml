@@ -1,0 +1,9 @@
+apps:
+  - name: grafana
+  - name: loki
+  - name: my-app
+repoURL: https://github.com/<your-username>/my-gitops-repo.git
+targetRevision: main
+destination:
+  server: https://kubernetes.default.svc
+  namespace: default
