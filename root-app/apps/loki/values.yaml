@@ -1,0 +1,3 @@
+loki:
+  service:
+    type: ClusterIP
