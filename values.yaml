@@ -1,9 +1,0 @@
-apps:
-  - name: grafana
-  - name: loki
-  - name: my-app
-repoURL: https://github.com/nicanorfinance/nnf-k8s-app-of-apps.git
-targetRevision: main
-destination:
-  server: https://kubernetes.default.svc
-  namespace: default
