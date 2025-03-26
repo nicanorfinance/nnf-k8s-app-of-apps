@@ -1,21 +1,21 @@
+{{ range .Values.apps }}
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.apps.name }}
+  name: {{ .name }}
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: {{ .Values.repoURL }}
-    targetRevision: {{ .Values.targetRevision }}
-    path: apps/{{ .Values.apps.name }}
+    repoURL: {{ $.Values.repoURL }}
+    targetRevision: {{ $.Values.targetRevision }}
+    path: apps/{{ .name }}
   destination:
-    server: {{ .Values.destination.server }}
-    namespace: {{ .Values.destination.namespace }}
+    server: {{ $.Values.destination.server }}
+    namespace: {{ $.Values.destination.namespace }}
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-{{ range .Values.apps }}
----
 {{ end }}
