@@ -1,13 +1,26 @@
 grafana:
   adminPassword: my-secret-password
   service:
-    type: LoadBalancer
+    type: ClusterIP
+  ingress:
+    enabled: true
+    ingressClassName: alb
+    annotations:
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/target-type: ip
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+      alb.ingress.kubernetes.io/ssl-redirect: "443"
+      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:005405548766:certificate/94fa9c2b-c3d7-4b81-9599-fa7a1cf6140b
+    hosts:
+      - grafana.nicanorfinance.com
+    path: /
+    pathType: Prefix
   datasources:
     datasources.yaml:
       apiVersion: 1
       datasources:
         - name: Loki
           type: loki
-          url: http://loki:3100
+          url: http://loki.monitoring.svc.cluster.local:3100  # Update if namespace changes
           access: proxy
           isDefault: true
