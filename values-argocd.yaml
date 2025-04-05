@@ -10,5 +10,6 @@ server:
       alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
       alb.ingress.kubernetes.io/ssl-redirect: "443"
       alb.ingress.kubernetes.io/healthcheck-path: /healthz
+      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:005405548766:certificate/94fa9c2b-c3d7-4b81-9599-fa7a1cf6140b
   service:
     type: ClusterIP
