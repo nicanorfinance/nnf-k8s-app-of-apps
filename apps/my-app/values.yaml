@@ -12,8 +12,8 @@ ingress:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-redirect: "443"
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:005405548766:certificate/94fa9c2b-c3d7-4b81-9599-fa7a1cf6140b
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:005405548766:certificate/03f81efb-09a8-4d09-8520-bd54a7ef7113
   hosts:
-    - my-app.nicanorfinance.com
+    - nicanorfinance.com
   path: /
   pathType: Prefix
