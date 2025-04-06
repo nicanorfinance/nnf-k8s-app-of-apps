@@ -10,7 +10,7 @@ grafana:
       alb.ingress.kubernetes.io/target-type: ip
       alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
       alb.ingress.kubernetes.io/ssl-redirect: "443"
-      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:005405548766:certificate/94fa9c2b-c3d7-4b81-9599-fa7a1cf6140b
+      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:005405548766:certificate/591ccdc4-9350-46ba-99d1-21586bf6ef3a
     hosts:
       - grafana.nicanorfinance.com
     path: /
@@ -21,6 +21,6 @@ grafana:
       datasources:
         - name: Loki
           type: loki
-          url: http://loki.monitoring.svc.cluster.local:3100  # Update if namespace changes
+          url: http://loki.monitoring.svc.cluster.local:3100
           access: proxy
           isDefault: true
