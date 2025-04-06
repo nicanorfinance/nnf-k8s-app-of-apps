@@ -1,7 +1,10 @@
 apps:
   - name: grafana
+    namespace: monitoring
   - name: loki
+    namespace: monitoring
   - name: my-app
+    namespace: default
 repoURL: https://github.com/nicanorfinance/nnf-k8s-app-of-apps.git
 targetRevision: main
 destination:
