@@ -5,6 +5,8 @@ apps:
     namespace: monitoring
   - name: my-app
     namespace: default
+  - name: prometheus
+    namespace: monitoring
 repoURL: https://github.com/nicanorfinance/nnf-k8s-app-of-apps.git
 targetRevision: main
 destination:
