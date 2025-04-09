@@ -4,7 +4,7 @@ prometheus:
   prometheusSpec:
     serviceMonitorSelectorNilUsesHelmValues: false
     serviceMonitorNamespaceSelector: {}
-    replicas: 1  # Single server pod
+    replicas: 1
     resources:
       requests:
         cpu: "100m"
@@ -14,4 +14,12 @@ prometheus:
         memory: "512Mi"
   nodeExporter:
     enabled: true
-    podAntiAffinity: {}  # Disable anti-affinity for node-exporter
+    podAntiAffinity: {}  # Disable anti-affinity
+  alertmanager:
+    resources:
+      requests:
+        cpu: "50m"
+        memory: "100Mi"
+      limits:
+        cpu: "200m"
+        memory: "256Mi"
