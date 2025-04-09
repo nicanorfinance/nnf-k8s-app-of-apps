@@ -1,0 +1,6 @@
+prometheus:
+  service:
+    type: ClusterIP
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorNamespaceSelector: {}
